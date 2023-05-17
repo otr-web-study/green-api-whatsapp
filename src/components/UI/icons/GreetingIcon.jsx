@@ -1,4 +1,4 @@
-const GreetingIcon = () => (
+export const GreetingIcon = () => (
   <svg
     viewBox="0 0 303 172"
     width="360"
@@ -100,5 +100,3 @@ const GreetingIcon = () => (
     ></path>
   </svg>
 );
-
-export default GreetingIcon;

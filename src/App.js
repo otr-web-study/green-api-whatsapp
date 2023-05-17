@@ -1,6 +1,7 @@
 import { Wrapper, Container } from './components/UI';
 import Recipients from './components/Recipients';
 import Messages from './components/Messages';
+import ErrorHandler from './components/ErrorHandler';
 import { ContextProvider } from './context/context';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
           <Messages />
         </Container>
       </Wrapper>
+      <ErrorHandler />
     </ContextProvider>
   );
 }

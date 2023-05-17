@@ -1,4 +1,4 @@
-import GreetingIcon from './UI/icons/GreetingIcon';
+import { GreetingIcon } from './UI/icons';
 
 const Greeting = () => (
   <div className="h-full flex flex-col justify-center items-center bg-bg_gray">

@@ -31,10 +31,12 @@ module.exports = {
     },
     colors: {
       bg_stripe: '#00a884',
+      bg_stripe_deeper: '#008069',
       bg_def: '#eae6df',
       bg_deeper: '#d1d7db',
       bg_conv_panel: '#efeae2',
       bg_gray: '#f0f2f5',
+      bg_white_05: 'rgba(255, 255, 255, .7)',
       white: '#fff',
       panel_bg_lighter: '#f7f8fa',
       primary: '#3b4a54',

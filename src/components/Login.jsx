@@ -28,9 +28,6 @@ const Login = () => {
         className="w-full bg-bg_gray h-9 px-3 rounded focus:outline-bg_stripe"
         onChange={onApiTokenInstanceChange}
       ></input>
-      {/* <button className="w-2/3 h-9 mt-6 bg-bg_stripe/80 rounded hover:bg-bg_stripe/70 transition-colors">
-        Sign in
-      </button> */}
       <StateButton onClick={loginBtnClick}>Sign in</StateButton>
     </form>
   );

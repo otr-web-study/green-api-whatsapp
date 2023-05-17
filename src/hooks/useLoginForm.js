@@ -5,6 +5,7 @@ import { AppContext } from '../context/context';
 export const useLoginForm = () => {
   const [idInstance, setIdInstance] = useState('');
   const [apiTokenInstance, setApiTokenInstance] = useState('');
+  const { login, setErrorMessage } = useContext(AppContext);
 
   const onIdInstanceChange = (evt) => {
     setIdInstance(evt.target.value);
@@ -17,7 +18,12 @@ export const useLoginForm = () => {
   const loginBtnClick = (evt) => {
     evt.preventDefault();
 
-    console.log(idInstance, apiTokenInstance);
+    if (!idInstance || !apiTokenInstance) {
+      setErrorMessage('All fields are required to be filled in.');
+      return;
+    }
+
+    login(idInstance, apiTokenInstance);
   };
 
   return {
