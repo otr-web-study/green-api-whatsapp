@@ -29,7 +29,7 @@ export const useNewRecipient = () => {
       return;
     }
 
-    addRecipient({ chatId, title });
+    addRecipient({ chatId, title: title ? title : chatId });
   };
 
   return {

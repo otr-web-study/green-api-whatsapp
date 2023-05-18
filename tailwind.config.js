@@ -9,6 +9,9 @@ module.exports = {
       backgroundImage: {
         messages: 'url("/public/images/bg-chat-tile-dark.png")',
       },
+      gridTemplateRows: {
+        layout: '59px 1fr max-content',
+      },
     },
     fontFamily: {
       sans: [
@@ -36,7 +39,10 @@ module.exports = {
       bg_deeper: '#d1d7db',
       bg_conv_panel: '#efeae2',
       bg_gray: '#f0f2f5',
+      bg_gray_hover: '#f5f6f6',
       bg_white_05: 'rgba(255, 255, 255, .7)',
+      bg_outgoing: '#d9fdd3',
+      bubble_meta: '#667781',
       white: '#fff',
       panel_bg_lighter: '#f7f8fa',
       primary: '#3b4a54',

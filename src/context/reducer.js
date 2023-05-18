@@ -17,9 +17,14 @@ export function reducer(state, { type, payload }) {
     }
     case actions.LOGOUT: {
       return {
-        ...state,
-        loginData: {},
         isLoggedIn: false,
+        loginData: {},
+        messages: {},
+        recipients: {},
+        loading: false,
+        errorMessage: '',
+        activePanel: '',
+        selectedRecipient: null,
       };
     }
     case actions.SET_LOADING: {
@@ -42,6 +47,36 @@ export function reducer(state, { type, payload }) {
           ...state.recipients,
           [payload.chatId]: { title: payload.title },
         },
+      };
+    }
+    case actions.SELECT_RECIPIENT: {
+      return {
+        ...state,
+        selectedRecipient: payload,
+      };
+    }
+    case actions.ADD_MESAGE: {
+      return {
+        ...state,
+        messages: {
+          ...state.messages,
+          [payload.chatId]: [...(state.messages[payload.chatId] ?? []), payload.message],
+        },
+      };
+    }
+    case actions.ADD_MESSAGES: {
+      let newMessages = state.messages;
+
+      Object.entries(payload).forEach(([chatId, messages]) => {
+        newMessages = {
+          ...newMessages,
+          [chatId]: [...(newMessages[chatId] ?? []), ...messages],
+        };
+      });
+
+      return {
+        ...state,
+        messages: newMessages,
       };
     }
     default:
