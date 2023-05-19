@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/green-api-whatsapp/static/css/main.bfa3e8a6.css",
+    "main.js": "/green-api-whatsapp/static/js/main.57879b44.js",
+    "static/media/bg-chat-tile-dark.png": "/green-api-whatsapp/static/media/bg-chat-tile-dark.39f53e74f66d348d9f7c.png",
+    "index.html": "/green-api-whatsapp/index.html",
+    "main.bfa3e8a6.css.map": "/green-api-whatsapp/static/css/main.bfa3e8a6.css.map",
+    "main.57879b44.js.map": "/green-api-whatsapp/static/js/main.57879b44.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bfa3e8a6.css",
+    "static/js/main.57879b44.js"
+  ]
+}
