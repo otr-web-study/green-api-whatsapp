@@ -1,8 +1,7 @@
 import { sendMessage as sendMessageApi } from '../../utils/api';
 import * as actions from '../actionsConstants';
-import { setStorageMessagesData } from '../../utils/storageHelper';
 
-export const sendMessage = (dispatch, ctx) => async (loginData, chatId, message, cb) => {
+export const sendMessage = (dispatch) => async (loginData, chatId, message, cb) => {
   let resp;
   try {
     resp = await sendMessageApi(loginData, { message, chatId });
@@ -13,7 +12,6 @@ export const sendMessage = (dispatch, ctx) => async (loginData, chatId, message,
     return;
   }
 
-  console.log(resp);
   const storeMessage = {
     id: resp.idMessage,
     text: message,
@@ -21,11 +19,6 @@ export const sendMessage = (dispatch, ctx) => async (loginData, chatId, message,
     dateAt: Date.now(),
   };
   dispatch({ type: actions.ADD_MESAGE, payload: { chatId, message: storeMessage } });
-
-  setStorageMessagesData({
-    ...ctx.messages,
-    [chatId]: [...(ctx.messages[chatId] ?? []), storeMessage],
-  });
 
   if (cb) {
     cb();

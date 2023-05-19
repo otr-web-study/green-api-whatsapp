@@ -1,5 +1,5 @@
 export const unixtimestampToTime = (timestamp) => {
-  const date = new Date(timestamp * 1000);
+  const date = new Date(timestamp);
   const hours = `0${date.getHours()}`;
   const minutes = `0${date.getMinutes()}`;
 

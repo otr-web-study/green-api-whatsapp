@@ -6,8 +6,11 @@ import RecipientList from './RecipientList';
 import Login from './Login';
 import NewRecipient from './NewRecipient';
 import Settings from './Settings';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
 const Recipients = () => {
+  useLocalStorage();
+
   const { isLoggedIn, activePanel } = useContext(AppContext);
   let content;
 

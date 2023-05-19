@@ -7,7 +7,6 @@ import {
   setStorageLoginData,
   getStorageMessagesData,
   getStorageRecipientsData,
-  setStorageRecipientsData,
 } from '../utils/storageHelper';
 import { login, sendMessage, getMessages } from './actions';
 
@@ -45,18 +44,13 @@ export const ContextProvider = ({ children }) => {
 
   value.setActivePanel = (panel) => dispatch({ type: actions.SET_ACTIVE_PANEL, payload: panel });
 
-  value.addRecipient = (recipientData) => {
+  value.addRecipient = (recipientData) =>
     dispatch({ type: actions.ADD_RECIPIENT, payload: recipientData });
-    setStorageRecipientsData({
-      ...value.recipients,
-      [recipientData.chatId]: { title: recipientData.title },
-    });
-  };
 
   value.selectRecipient = (recipient) =>
     dispatch({ type: actions.SELECT_RECIPIENT, payload: recipient });
 
-  value.sendMessage = sendMessage(dispatch, value);
+  value.sendMessage = sendMessage(dispatch);
 
   value.getMessages = getMessages(dispatch, value);
 

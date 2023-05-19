@@ -43,11 +43,11 @@ export const getMessages = async ({ idInstance, apiTokenInstance }) => {
     if (respData.body.typeWebhook !== 'incomingMessageReceived') {
       break;
     }
-    // await deleteMessage(idInstance, apiTokenInstance, respData.receiptId);
-    messages.push(respData.body);
-    break;
 
-    // resp = await getMessage(idInstance, apiTokenInstance);
+    await deleteMessage(idInstance, apiTokenInstance, respData.receiptId);
+    messages.push(respData.body);
+
+    respData = await getMessage(idInstance, apiTokenInstance);
   }
 
   return messages;

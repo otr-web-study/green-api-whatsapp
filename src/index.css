@@ -29,4 +29,18 @@ div#root {
   .border-recipients {
     border-right: 2px solid rgba(11, 20, 26, 0.05);
   }
+
+  .right-figure {
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    border-bottom: 16px solid #d9fdd3;
+    rotate: 60deg;
+  }
+
+  .left-figure {
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    border-bottom: 16px solid white;
+    rotate: -60deg;
+  }
 }

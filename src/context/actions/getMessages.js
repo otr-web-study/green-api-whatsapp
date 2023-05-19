@@ -6,7 +6,7 @@ export const getMessages = (dispatch, ctx) => async (loginData) => {
   const { recipients } = ctx;
 
   const { messagesBySender, incomeRecipients } = incomeMessages.reduce(
-    ({ messagesBySender, incomeRecipients }, { timestamp, idMessage, senderData, messageData }) => {
+    ({ messagesBySender, incomeRecipients }, { idMessage, senderData, messageData }) => {
       const chatId = senderData.chatId;
       const currentMessages = {
         ...messagesBySender,
@@ -16,7 +16,7 @@ export const getMessages = (dispatch, ctx) => async (loginData) => {
             id: idMessage,
             text: messageData.textMessageData.textMessage,
             income: true,
-            dateAt: timestamp,
+            dateAt: Date.now(),
           },
         ],
       };
